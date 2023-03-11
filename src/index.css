@@ -51,6 +51,7 @@
 .icon-button:hover,
 .icon-button:focus-visible {
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .icon-button[disabled] {
@@ -64,7 +65,7 @@ body {
   min-height: 100vh;
   background-color: var(--BGCOLOR);
   color: var(--COLOR);
-  background-image: url('./img/background.jpg');
+  background-image: url('./images/background.jpg');
   background-size: cover;
   background-position: top right;
   background-blend-mode: multiply;
