@@ -92,7 +92,41 @@ const NewUserForm = () => {
                 <label htmlFor="username" className="form__label">
                     Username: <span className='nowrap'>[3 - 20 letters]</span>
                 </label>
-                <input type="text" />
+                <input
+                    className={`form__input ${validUserClass}`}
+                    id='username'
+                    name='username'
+                    autoComplete='off'
+                    value={userName}
+                    onChange={onUserNameChanged}
+                    type="text" />
+
+                <label htmlFor="password" className="form__label">
+                    Password: <span className='nowrap'>[4 - 12 chars incl. !@#$%]</span>
+                </label>
+                <input
+                    className={`form__input ${validPwdClass}`}
+                    id='password'
+                    name='password'
+                    autoComplete='off'
+                    value={password}
+                    onChange={onUserPasswordChanged}
+                    type="password" />
+
+                <label htmlFor="roles" className="form__label">
+                    ASSIGNED ROLES:
+                </label>
+                <select
+                name="roles"
+                id="roles"
+                className={`form__select ${validRolesClass}`}
+                multiple={true}
+                size="3"
+                value={roles}
+                onChange={onRolesChanged}
+                >
+                    {options}
+                </select>
             </form>
         </>
     )
