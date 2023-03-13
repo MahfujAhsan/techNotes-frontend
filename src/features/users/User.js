@@ -11,7 +11,7 @@ const User = ({ userId }) => {
     const navigate = useNavigate()
 
 
-    if(user) {
+    if (user) {
         const handleEdit = () => navigate(`/dash/users/${userId}`)
 
         const userRoleString = user.roles.toString().replaceAll(',', ', ')
@@ -21,6 +21,12 @@ const User = ({ userId }) => {
         return (
             <tr className="table__row user">
                 <td className={`table__cell ${cellStatus}`}>{user.username}</td>
+                <td className={`table__cell ${cellStatus}`}>{userRoleString}</td>
+                <td className={`table__cell ${cellStatus}`}>
+                    <button className="icon-button table__button" onClick={handleEdit}>
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                    </button>
+                </td>
             </tr>
         )
     } else return null
